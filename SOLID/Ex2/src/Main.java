@@ -14,6 +14,9 @@ public class Main {
                 new OrderLine("C1", 1)
         );
 
-        sys.checkout("student", order);
+
+        DiscountRules discountRules = new NormalDiscount();
+        TaxRules taxRules = new NormalTax();
+        sys.checkout("student", order,discountRules,taxRules);
     }
 }
